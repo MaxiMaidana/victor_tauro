@@ -5,7 +5,6 @@ import 'package:flutter/services.dart';
 
 import '../models/user.dart';
 import '../../features/login/domain/repository/auth_repository.dart';
-import '../datasource/datasource.dart';
 import '../models/response.dart';
 
 class AuthRepository implements RAuthRepository {
