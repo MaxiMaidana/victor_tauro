@@ -12,26 +12,28 @@ class Page404 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 40),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Text(
-              '404',
-              style: TextStyle(fontSize: 40),
-            ),
-            const SizedBox(height: 25),
-            const Text('No se encontro la pagina'),
-            const SizedBox(height: 50),
-            ButtonWidget.principal(
-              textButton: 'Volver al login',
-              onPress: () =>
-                  // Navigator.pushReplacementNamed(context, Routes.login),
-                  locator<NavigationService>().navigateTo(Routes.login),
-            ),
-          ],
+    return Scaffold(
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 40),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Text(
+                '404',
+                style: TextStyle(fontSize: 40),
+              ),
+              const SizedBox(height: 25),
+              const Text('No se encontro la pagina'),
+              const SizedBox(height: 50),
+              ButtonWidget.principal(
+                textButton: 'Volver al login',
+                onPress: () =>
+                    // Navigator.pushReplacementNamed(context, Routes.login),
+                    locator<NavigationService>().navigateTo(Routes.login),
+              ),
+            ],
+          ),
         ),
       ),
     );
