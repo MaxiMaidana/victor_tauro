@@ -8,6 +8,8 @@ abstract class AuthEvent extends Equatable {
   List<Object> get props => [];
 }
 
+class InitialEvent extends AuthEvent {}
+
 class AuthLogin extends AuthEvent {
   final User user;
 
@@ -16,5 +18,3 @@ class AuthLogin extends AuthEvent {
   @override
   List<Object> get props => [];
 }
-
-class GoToHome extends AuthEvent {}

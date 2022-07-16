@@ -1,4 +1,5 @@
 import 'package:equatable/equatable.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:meta/meta.dart';
 import 'package:victor_tauro/features/login/domain/usecases/sign_in.dart';
@@ -21,8 +22,8 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         emit(AuthError());
       }
     });
-    on<GoToHome>((event, emit) {
-      // TODO: implement event handler
+    on<InitialEvent>((event, emit) {
+      emit(AuthInitial());
     });
   }
 }

@@ -1,9 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:victor_tauro/core/responsive_layout.dart';
-import 'package:victor_tauro/features/login/presentation/pages/login_page.dart';
+import 'package:victor_tauro/features/login/presentation/view/login_view.dart';
 
 class WidgetTree extends StatefulWidget {
-  const WidgetTree({Key? key}) : super(key: key);
+  final Widget tiny;
+  final Widget phone;
+  final Widget tablet;
+  final Widget largeTablet;
+  final Widget computer;
+  const WidgetTree({
+    Key? key,
+    required this.tiny,
+    required this.phone,
+    required this.tablet,
+    required this.largeTablet,
+    required this.computer,
+  }) : super(key: key);
 
   @override
   State<WidgetTree> createState() => _WidgetTreeState();
@@ -20,25 +32,12 @@ class _WidgetTreeState extends State<WidgetTree> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      // appBar: PreferredSize(
-      //   preferredSize: Size(double.infinity, 100),
-      //   child: (ResponsiveLayout.isTinyLimit(context) ||
-      //           ResponsiveLayout.isTinyHeightLimit(context))
-      //       ? Container()
-      //       : AppBarWidget(),
-      // ),
-      body: ResponsiveLayout(
-        tiny: Container(),
-        phone: Container(),
-        tablet: Container(),
-        largeTablet: Container(),
-        computer: const LoginPage(),
-      ),
-      // drawer: DrawerPage(),
-      // bottomNavigationBar: ResponsiveLayout.isPhone(context)
-      //     ? Container()
-      //     : const SizedBox(),
+    return ResponsiveLayout(
+      tiny: widget.tiny,
+      phone: widget.phone,
+      tablet: widget.tablet,
+      largeTablet: widget.largeTablet,
+      computer: widget.computer,
     );
   }
 }
