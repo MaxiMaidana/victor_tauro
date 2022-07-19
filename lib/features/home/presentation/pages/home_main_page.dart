@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 
 import '../../../../core/widget_tree.dart';
-import '../view/login_view.dart';
+import '../view/home_view.dart';
+import '../widgets/items_buttons.dart';
 
-class LoginMainPage extends StatefulWidget {
-  const LoginMainPage({Key? key}) : super(key: key);
+class HomeMainPage extends StatefulWidget {
+  const HomeMainPage({Key? key}) : super(key: key);
 
   @override
-  State<LoginMainPage> createState() => _LoginMainPageState();
+  State<HomeMainPage> createState() => _HomeMainPageState();
 }
 
-class _LoginMainPageState extends State<LoginMainPage> {
+class _HomeMainPageState extends State<HomeMainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,7 +27,12 @@ class _LoginMainPageState extends State<LoginMainPage> {
         phone: Container(),
         tablet: Container(),
         largeTablet: Container(),
-        computer: const LoginView(),
+        computer: Column(
+          children: const [
+            ItemsButtons(),
+            HomeView(),
+          ],
+        ),
       ),
 
       // drawer: DrawerPage(),
