@@ -38,9 +38,13 @@ class _LoginColumnState extends State<LoginColumn> {
         const SizedBox(height: 50),
         ButtonWidget.principal(
           textButton: 'Continuar',
-          onPress: () => context
-              .read<AuthBloc>()
-              .add(AuthLogin(User(user: user.text, password: pass.text))),
+          onPress: () {
+            context.read<AuthBloc>().add(
+                  AuthLogin(
+                    User(user: user.text, password: pass.text),
+                  ),
+                );
+          },
         ),
       ],
     );

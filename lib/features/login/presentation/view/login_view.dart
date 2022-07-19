@@ -7,14 +7,14 @@ import 'package:victor_tauro/locator.dart';
 import '../../../../core/routes/routes.dart';
 import '../widgets/login_column.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({Key? key}) : super(key: key);
+class LoginView extends StatefulWidget {
+  const LoginView({Key? key}) : super(key: key);
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<LoginView> createState() => _LoginViewState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _LoginViewState extends State<LoginView> {
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -23,22 +23,16 @@ class _LoginPageState extends State<LoginPage> {
         listener: (context, state) {
           if (state is AuthLogued) {
             locator<NavigationService>().navigateTo(Routes.home);
-            // Navigator.pushReplacementNamed(context, Routes.home);
           }
           if (state is AuthError) {
             locator<NavigationService>().navigateTo(Routes.errorPage);
-            // Navigator.pushReplacementNamed(context, Routes.errorPage);
-            context.read<AuthBloc>().add(InitialEvent());
           }
         },
         builder: (context, state) {
-          if (state is AuthInitial) {
-            return const LoginColumn();
-          }
           if (state is AuthLoading) {
             return const Center(child: CircularProgressIndicator());
           } else {
-            return const Text('error');
+            return const LoginColumn();
           }
         },
       ),

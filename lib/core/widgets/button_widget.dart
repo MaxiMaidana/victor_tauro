@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:victor_tauro/core/widgets/text_widget.dart';
 
+import '../constants.dart';
+
 /// Widget custom de botones.
 ///
 /// Utilizar los factory(principal).
@@ -54,7 +56,7 @@ class _ButtonWidgetState extends State<ButtonWidget> {
         decoration: BoxDecoration(
           color: widget.onPress == null
               ? Colors.grey
-              : widget.color ?? Colors.pinkAccent,
+              : widget.color ?? kPrincipalColor,
           borderRadius: BorderRadius.circular(25),
           boxShadow: const [
             BoxShadow(

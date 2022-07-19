@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 
 import 'package:victor_tauro/core/routes/routes.dart';
-import 'package:victor_tauro/features/home/presentation/pages/home_page.dart';
+import 'package:victor_tauro/features/home/presentation/pages/home_main_page.dart';
 
 import '../../features/error/presentation/pages/page_404.dart';
 import '../../features/login/presentation/pages/login_main_page.dart';
@@ -14,7 +14,7 @@ class RouteGenerator {
       case Routes.login:
         return _fadeRoute(const LoginMainPage(), Routes.login);
       case Routes.home:
-        return _fadeRoute(const HomePage(), Routes.home);
+        return _fadeRoute(const HomeMainPage(), Routes.home);
       default:
         return _fadeRoute(const Page404(), Routes.errorPage);
     }
