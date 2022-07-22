@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
 import '../../../../core/constants.dart';
+import '../../../../core/routes/routes.dart';
+import '../../../../core/service/navigation_service.dart';
+import '../../../../locator.dart';
 
 class ItemsButtons extends StatefulWidget {
   const ItemsButtons({Key? key}) : super(key: key);
@@ -19,7 +22,7 @@ class _ItemsButtonsState extends State<ItemsButtons> {
           child: SizedBox(
             height: 70,
             child: InkWell(
-              onTap: () {},
+              onTap: () => locator<NavigationService>().navigateTo(Routes.home),
               hoverColor: kPrincipalColor,
               child: const Center(
                 child: Text('Inicio'),
@@ -31,7 +34,8 @@ class _ItemsButtonsState extends State<ItemsButtons> {
           child: SizedBox(
             height: 70,
             child: InkWell(
-              onTap: () {},
+              onTap: () =>
+                  locator<NavigationService>().navigateTo(Routes.products),
               hoverColor: kPrincipalColor,
               child: const Center(
                 child: Text('Productos'),
@@ -43,8 +47,9 @@ class _ItemsButtonsState extends State<ItemsButtons> {
           child: SizedBox(
             height: 70,
             child: InkWell(
+              onTap: () =>
+                  locator<NavigationService>().navigateTo(Routes.stock),
               hoverColor: kPrincipalColor,
-              onTap: () {},
               child: const Center(
                 child: Text('Stock'),
               ),
@@ -55,8 +60,9 @@ class _ItemsButtonsState extends State<ItemsButtons> {
           child: SizedBox(
             height: 70,
             child: InkWell(
+              onTap: () =>
+                  locator<NavigationService>().navigateTo(Routes.sales),
               hoverColor: kPrincipalColor,
-              onTap: () {},
               child: const Center(
                 child: Text('Ventas'),
               ),
