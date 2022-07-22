@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:victor_tauro/features/home/presentation/views/products_view.dart';
 
 import '../../../../core/widget_tree.dart';
-import '../view/home_view.dart';
+import '../views/home_view.dart';
 import '../widgets/items_buttons.dart';
 
-class HomeMainPage extends StatefulWidget {
-  const HomeMainPage({Key? key}) : super(key: key);
+class HomeLayout extends StatefulWidget {
+  final Widget? child;
+  const HomeLayout({Key? key, this.child}) : super(key: key);
 
   @override
-  State<HomeMainPage> createState() => _HomeMainPageState();
+  State<HomeLayout> createState() => _HomeLayoutState();
 }
 
-class _HomeMainPageState extends State<HomeMainPage> {
+class _HomeLayoutState extends State<HomeLayout> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,9 +30,11 @@ class _HomeMainPageState extends State<HomeMainPage> {
         tablet: Container(),
         largeTablet: Container(),
         computer: Column(
-          children: const [
-            ItemsButtons(),
-            HomeView(),
+          children: [
+            const ItemsButtons(),
+            // HomeView(),
+            widget.child!
+            // ProductsView(),
           ],
         ),
       ),

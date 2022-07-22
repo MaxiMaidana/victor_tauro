@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 import '../../../../core/widget_tree.dart';
 import '../view/login_view.dart';
 
-class LoginMainPage extends StatefulWidget {
-  const LoginMainPage({Key? key}) : super(key: key);
+class LoginLayout extends StatefulWidget {
+  const LoginLayout({Key? key}) : super(key: key);
 
   @override
-  State<LoginMainPage> createState() => _LoginMainPageState();
+  State<LoginLayout> createState() => _LoginLayoutState();
 }
 
-class _LoginMainPageState extends State<LoginMainPage> {
+class _LoginLayoutState extends State<LoginLayout> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
