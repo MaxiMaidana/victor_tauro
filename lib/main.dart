@@ -30,9 +30,6 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(primarySwatch: Colors.pink),
         onGenerateRoute: Flurorouter.router.generator,
         navigatorKey: locator<NavigationService>().navigatorKey,
-        // builder: (_, child) {
-        //   return HomeLayout(child: child ?? Container());
-        // },
         // onGenerateRoute: (RouteSettings settings) =>
         //     RouteGenerator.generateRoute(settings),
       ),
