@@ -22,7 +22,7 @@ final Handler homeHandler = Handler(handlerFunc: (context, params) {
 final Handler productsHandler = Handler(handlerFunc: (context, params) {
   if (params['id']?[0] != null) {
     return HomeLayout(
-      child: ProductsItemView(productId: params['id']?.first ?? 'Error'),
+      child: ProductsItemView(nailPolishId: params['id']?.first ?? 'Error'),
     );
   } else {
     return const HomeLayout(

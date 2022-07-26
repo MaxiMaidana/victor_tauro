@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../core/constants.dart';
 import '../../../../core/routes/routes.dart';
 import '../../../../core/service/navigation_service.dart';
 import '../../../../locator.dart';
+import '../bloc/products/products_bloc.dart';
 
 class ItemsButtons extends StatefulWidget {
   const ItemsButtons({Key? key}) : super(key: key);
@@ -34,8 +36,10 @@ class _ItemsButtonsState extends State<ItemsButtons> {
           child: SizedBox(
             height: 70,
             child: InkWell(
-              onTap: () =>
-                  locator<NavigationService>().navigateTo(Routes.products),
+              onTap: () {
+                context.read<ProductsBloc>().add(ProductsGet());
+                locator<NavigationService>().navigateTo(Routes.products);
+              },
               hoverColor: kPrincipalColor,
               child: const Center(
                 child: Text('Productos'),

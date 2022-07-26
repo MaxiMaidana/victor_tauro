@@ -10,9 +10,9 @@ class User extends Equatable {
   List<Object?> get props => [user, password];
 
   static List<User> users = [
-    const User(user: 'solano', password: 'solano'),
-    const User(user: 'quilmes', password: 'quilmes'),
-    const User(user: 'victor', password: 'victor'),
+    // const User(user: 'solano', password: 'solano'),
+    // const User(user: 'quilmes', password: 'quilmes'),
+    // const User(user: 'victor', password: 'victor'),
   ];
 
   static User fromJson(Map<String, dynamic> json) =>
