@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:victor_tauro/core/routes/router.dart';
+import 'package:victor_tauro/features/home/presentation/bloc/products/products_bloc.dart';
 import 'package:victor_tauro/features/home/presentation/pages/home_main_page.dart';
 import 'package:victor_tauro/features/login/presentation/bloc/auth_bloc.dart';
 
@@ -22,6 +23,7 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (context) => AuthBloc()),
+        BlocProvider(create: (context) => ProductsBloc()),
       ],
       child: MaterialApp(
         title: 'Victor Tauro',

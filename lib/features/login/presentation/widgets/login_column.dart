@@ -5,7 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../core/widgets/button_widget.dart';
 import '../../../../core/widgets/input_widget.dart';
-import '../../../../data/models/user.dart';
+import '../../../../data/models/user/user.dart';
 import '../bloc/auth_bloc.dart';
 
 class LoginColumn extends StatefulWidget {

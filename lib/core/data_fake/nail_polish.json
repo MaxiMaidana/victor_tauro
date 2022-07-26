@@ -1,0 +1,66 @@
+{
+    
+    "nailPolishs" : [
+        {
+            "id" : "123123123", 
+            "name" : "Esmalte", 
+            "distributor" : "Meline", 
+            "color_cod" : "606", 
+            "color_name" : "Silver Diamond", 
+            "url_photo" : "http://d3ugyf2ht6aenh.cloudfront.net/stores/001/165/900/products/color-gel-led-uv-606-silver-diamond-meline-15ml1-ba2006937020ccc74616269265610827-640-01-b417683b8d9880484516353002004335-640-0.jpg",
+            "barcode" : "8200000061657",
+            "price" : 350.0 
+        },
+        {
+            "id" : "123123124", 
+            "name" : "Esmalte", 
+            "distributor" : "Meline", 
+            "color_cod" : "470", 
+            "color_name" : "Lilac Shade", 
+            "url_photo" : "http://d3ugyf2ht6aenh.cloudfront.net/stores/001/816/207/products/470-scaled1-eefde1c7c5b465be6216374626531461-640-0.jpg",
+            "barcode" : "",
+            "price" : 350.0 
+        },
+        {
+            "id" : "123123125", 
+            "name" : "Esmalte", 
+            "distributor" : "Meline", 
+            "color_cod" : "458", 
+            "color_name" : "Mandalay Sand", 
+            "url_photo" : "https://d3ugyf2ht6aenh.cloudfront.net/stores/001/204/214/products/picsart_07-08-05-29-401-751757b19f63fc6d5316260341661525-480-0.jpg",
+            "barcode" : "",
+            "price" : 350.0 
+        },
+        {
+            "id" : "123123126", 
+            "name" : "Esmalte", 
+            "distributor" : "Angela Breciano", 
+            "color_cod" : "013", 
+            "color_name" : "Blanco", 
+            "url_photo" : "https://d3ugyf2ht6aenh.cloudfront.net/stores/938/535/products/0131-c06db5e13d22ca2ab015680425014221-640-0.jpg",
+            "barcode" : "",
+            "price" : 450.0 
+        },
+        {
+            "id" : "123123127", 
+            "name" : "Esmalte", 
+            "distributor" : "Tejar", 
+            "color_cod" : "21", 
+            "color_name" : "", 
+            "url_photo" : "https://cdn.batitienda.com/baticloud/images/product_image_from_excel_7224919905914fe29c4bdc0ac60e4cbe_637556695873942975_0_m.jpg",
+            "barcode" : "7798317829348",
+            "price" : 250.0 
+        },
+        {
+            "id" : "123123128", 
+            "name" : "Esmalte", 
+            "distributor" : "Cherimoya", 
+            "color_cod" : "509", 
+            "color_name" : "", 
+            "url_photo" : "https://d3ugyf2ht6aenh.cloudfront.net/stores/001/267/243/products/5091-14415f113d6156097a16518375084015-1024-1024.jpg",
+            "barcode" : "7805250225097",
+            "price" : 250.0 
+        }
+    ]
+
+}

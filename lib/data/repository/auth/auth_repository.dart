@@ -3,9 +3,9 @@ import 'dart:convert';
 import 'package:dio/dio.dart';
 import 'package:flutter/services.dart';
 
-import '../models/user.dart';
-import '../../features/login/domain/repository/auth_repository.dart';
-import '../models/response.dart';
+import '../../models/user/user.dart';
+import '../../../features/login/domain/repository/auth_repository.dart';
+import '../../models/response.dart';
 
 class AuthRepository implements RAuthRepository {
   // final DataSource _dataSource;

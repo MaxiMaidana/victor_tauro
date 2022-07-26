@@ -1,7 +1,7 @@
-import '../../../../data/repository/auth_repository.dart';
+import '../../../../data/repository/auth/auth_repository.dart';
 
 class SignIn {
-  SignIn();
+  // SignIn();
 
   Future<bool> call({required String user, required String password}) async {
     try {
