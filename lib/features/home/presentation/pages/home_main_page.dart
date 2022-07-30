@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:victor_tauro/features/home/presentation/views/products_view.dart';
 
 import '../../../../core/widget_tree.dart';
-import '../views/home_view.dart';
 import '../widgets/items_buttons.dart';
 
 class HomeLayout extends StatefulWidget {

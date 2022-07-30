@@ -1,7 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:meta/meta.dart';
 import 'package:victor_tauro/features/login/domain/usecases/sign_in.dart';
 
 import '../../../../data/models/user/user.dart';
