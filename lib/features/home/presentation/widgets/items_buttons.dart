@@ -17,6 +17,7 @@ class ItemsButtons extends StatefulWidget {
 class _ItemsButtonsState extends State<ItemsButtons> {
   @override
   Widget build(BuildContext context) {
+    print('esto anda bien???');
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
@@ -41,8 +42,22 @@ class _ItemsButtonsState extends State<ItemsButtons> {
                 locator<NavigationService>().navigateTo(Routes.products);
               },
               hoverColor: kPrincipalColor,
-              child: const Center(
-                child: Text('Productos'),
+              child: Center(
+                child: Column(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: const [
+                    Expanded(
+                      child: SizedBox(
+                        width: double.infinity,
+                        child: Center(child: Text('Productos')),
+                      ),
+                    ),
+                    Visibility(
+                      child: Divider(),
+                    ),
+                  ],
+                ),
               ),
             ),
           ),
