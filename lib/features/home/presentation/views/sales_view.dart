@@ -12,6 +12,7 @@ class _SalesViewState extends State<SalesView> {
   Widget build(BuildContext context) {
     return Column(
       children: const [
+        SizedBox(height: 70),
         Text('Sales'),
       ],
     );

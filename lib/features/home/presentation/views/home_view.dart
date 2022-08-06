@@ -12,6 +12,7 @@ class _HomeViewState extends State<HomeView> {
   Widget build(BuildContext context) {
     return Column(
       children: const [
+        SizedBox(height: 70),
         Text('Home'),
       ],
     );

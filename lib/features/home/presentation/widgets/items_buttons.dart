@@ -1,14 +1,8 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
 import 'package:victor_tauro/features/home/presentation/widgets/item_manu.dart';
 
 import '../../../../core/constants.dart';
-import '../../../../core/routes/routes.dart';
-import '../../../../core/service/navigation_service.dart';
-import '../../../../locator.dart';
 import '../bloc/products/products_bloc.dart';
 import '../provider/navigation_provider.dart';
 
@@ -23,7 +17,6 @@ class _ItemsButtonsState extends State<ItemsButtons> {
   @override
   Widget build(BuildContext context) {
     final navigationProvider = Provider.of<NavigationProvider>(context);
-    print('esto anda bien???');
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [

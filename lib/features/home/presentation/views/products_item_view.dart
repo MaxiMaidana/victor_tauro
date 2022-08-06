@@ -24,7 +24,7 @@ class _ProductsItemViewState extends State<ProductsItemView> {
           return Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const SizedBox(height: 20),
+              const SizedBox(height: 70),
               Text(
                 '${nailPolish.name}',
                 style: const TextStyle(fontSize: 25),

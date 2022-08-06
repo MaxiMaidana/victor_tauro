@@ -83,6 +83,7 @@ final Handler initHandler = Handler(
             );
       }
     }
+    return null;
   },
 );
 
