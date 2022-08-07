@@ -21,38 +21,43 @@ class Flurorouter {
     );
 
     //PRODUCTS
-    router.define(
-      Routes.products,
-      handler: productsHandler,
-      transitionType: TransitionType.none,
-    );
-    router.define(
-      '${Routes.products}/:id',
-      handler: productsHandler,
-      transitionType: TransitionType.none,
-    );
+    // router.define(
+    //   Routes.products,
+    //   handler: homeHandler,
+    //   transitionType: TransitionType.none,
+    // );
+    // router.define(
+    //   '${Routes.products}/:id',
+    //   handler: productsHandler,
+    //   transitionType: TransitionType.none,
+    // );
 
     //SALES
-    router.define(
-      Routes.sales,
-      handler: salesHandler,
-      transitionType: TransitionType.none,
-    );
-    router.define(
-      '${Routes.sales}/:id',
-      handler: salesHandler,
-      transitionType: TransitionType.none,
-    );
+    // router.define(
+    //   Routes.sales,
+    //   handler: homeHandler,
+    //   transitionType: TransitionType.none,
+    // );
+    // router.define(
+    //   '${Routes.sales}/:id',
+    //   handler: salesHandler,
+    //   transitionType: TransitionType.none,
+    // );
 
     //STOCK
+    // router.define(
+    //   Routes.stock,
+    //   handler: homeHandler,
+    //   transitionType: TransitionType.none,
+    // );
+    // router.define(
+    //   '${Routes.stock}/:id',
+    //   handler: stockHandler,
+    //   transitionType: TransitionType.none,
+    // );
     router.define(
-      Routes.stock,
-      handler: stockHandler,
-      transitionType: TransitionType.none,
-    );
-    router.define(
-      '${Routes.stock}/:id',
-      handler: stockHandler,
+      '${Routes.init}:page',
+      handler: initHandler,
       transitionType: TransitionType.none,
     );
 

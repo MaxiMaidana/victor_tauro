@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:victor_tauro/data/models/products/nail_polish.dart';
@@ -25,7 +24,7 @@ class _ProductsItemViewState extends State<ProductsItemView> {
           return Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const SizedBox(height: 20),
+              const SizedBox(height: 70),
               Text(
                 '${nailPolish.name}',
                 style: const TextStyle(fontSize: 25),

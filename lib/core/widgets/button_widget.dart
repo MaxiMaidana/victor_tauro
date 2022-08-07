@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:victor_tauro/core/widgets/text_widget.dart';
+// import 'dart:html' as html;
 
 import '../constants.dart';
 
-/// Widget custom de botones.
-///
-/// Utilizar los factory(principal).
 class ButtonWidget extends StatefulWidget {
   final String textButton;
   final bool? loading;
@@ -22,13 +20,6 @@ class ButtonWidget extends StatefulWidget {
     this.loadingWidget,
   }) : super(key: key);
 
-  /// Boton princiapal, se le tiene que pasar como parametro obligatorio un texto.
-  /// De manera opcional una 'void Function' en onPress.
-  ///
-  /// De manera opcional un bool en loading para poder ver un widget de loading.
-  ///
-  /// De manera opcioanl un color ya que sino por defecto vendra [Colors.greenAccent].
-  ///
   factory ButtonWidget.principal({
     required String textButton,
     void Function()? onPress,

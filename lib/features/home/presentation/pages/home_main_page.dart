@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:victor_tauro/features/home/presentation/views/products_view.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:provider/provider.dart';
+import 'package:victor_tauro/features/home/presentation/provider/navigation_provider.dart';
 
 import '../../../../core/widget_tree.dart';
 import '../views/home_view.dart';
+import '../views/products_view.dart';
+import '../views/sales_view.dart';
+import '../views/stock_view.dart';
 import '../widgets/items_buttons.dart';
 
 class HomeLayout extends StatefulWidget {
-  final Widget? child;
-  const HomeLayout({Key? key, this.child}) : super(key: key);
+  const HomeLayout({Key? key}) : super(key: key);
 
   @override
   State<HomeLayout> createState() => _HomeLayoutState();
@@ -16,6 +20,8 @@ class HomeLayout extends StatefulWidget {
 class _HomeLayoutState extends State<HomeLayout> {
   @override
   Widget build(BuildContext context) {
+    final navigationProvider = Provider.of<NavigationProvider>(context);
+
     return Scaffold(
       // appBar: PreferredSize(
       //   preferredSize: Size(double.infinity, 100),
@@ -29,12 +35,20 @@ class _HomeLayoutState extends State<HomeLayout> {
         phone: Container(),
         tablet: Container(),
         largeTablet: Container(),
-        computer: Column(
+        computer: Stack(
           children: [
+            PageView(
+              physics: const NeverScrollableScrollPhysics(),
+              controller: navigationProvider.scrollController,
+              children: const [
+                HomeView(),
+                // widget.child!
+                ProductsView(),
+                StockView(),
+                SalesView(),
+              ],
+            ),
             const ItemsButtons(),
-            // HomeView(),
-            widget.child!
-            // ProductsView(),
           ],
         ),
       ),

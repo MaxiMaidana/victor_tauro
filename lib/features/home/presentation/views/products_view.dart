@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -26,11 +25,11 @@ class _ProductsViewState extends State<ProductsView> {
         if (state is ProductsCharged) {
           return Column(
             children: [
-              const SizedBox(height: 20),
+              const SizedBox(height: 70),
               const Text('Products', style: TextStyle(fontSize: 30)),
               const SizedBox(height: 20),
               SizedBox(
-                height: size.height - 145,
+                height: size.height - 125,
                 width: double.infinity,
                 child: GridView.builder(
                   padding: const EdgeInsets.symmetric(horizontal: 40),
@@ -44,8 +43,41 @@ class _ProductsViewState extends State<ProductsView> {
                   itemBuilder: (context, i) {
                     return InkWell(
                       onTap: () {
-                        locator<NavigationService>()
-                            .navigateTo('${Routes.products}/$i');
+                        // locator<NavigationService>()
+                        //     .navigateTo('${Routes.products}/$i');
+                        showDialog(
+                          context: context,
+                          builder: (context) => AlertDialog(
+                            title: Text('${state.products[i].name}'),
+                            content: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Container(
+                                  height: 250,
+                                  width: 250,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(28),
+                                  ),
+                                  child: Image.network(
+                                      state.products[i].urlPhoto!),
+                                ),
+                                const SizedBox(height: 10),
+                                Text(
+                                    'Nombre del proovedor: ${state.products[i].distributor}'),
+                                const SizedBox(height: 10),
+                                Text(
+                                    'Nombre del color: ${state.products[i].colorName}'),
+                                const SizedBox(height: 10),
+                                Text(
+                                    'Codigo de color: ${state.products[i].colorCod}'),
+                                const SizedBox(height: 10),
+                                Text(
+                                    'Codigo de barras: ${state.products[i].barcode}'),
+                                const SizedBox(height: 10),
+                              ],
+                            ),
+                          ),
+                        );
                       },
                       child: Container(
                         height: 100,

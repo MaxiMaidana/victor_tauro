@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:victor_tauro/core/responsive_layout.dart';
-import 'package:victor_tauro/features/login/presentation/view/login_view.dart';
 
 class WidgetTree extends StatefulWidget {
   final Widget tiny;
