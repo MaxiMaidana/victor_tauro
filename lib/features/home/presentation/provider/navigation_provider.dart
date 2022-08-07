@@ -8,6 +8,7 @@ class NavigationProvider extends ChangeNotifier {
 
   void createScrollController(String routeName) {
     scrollController = PageController(initialPage: getPageIndex(routeName));
+    html.document.title = _pages[getPageIndex(routeName)];
   }
 
   int getPageIndex(String routeName) {
@@ -17,6 +18,7 @@ class NavigationProvider extends ChangeNotifier {
 
   void goTo(int index) {
     html.window.history.pushState(null, 'none', '#/${_pages[index]}');
+    html.document.title = _pages[index];
 
     scrollController.animateToPage(
       index,
