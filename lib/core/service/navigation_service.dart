@@ -6,5 +6,8 @@ class NavigationService {
   Future<void> navigateTo(String routeName) =>
       navigatorKey.currentState!.pushNamed(routeName);
 
+  Future<void> replaceTo(String routeName) =>
+      navigatorKey.currentState!.pushReplacementNamed(routeName);
+
   void goBack(String routeName) => navigatorKey.currentState!.pop();
 }

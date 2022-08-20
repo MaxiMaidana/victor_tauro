@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:universal_html/html.dart' as html;
 
+import '../../../../core/routes/routes.dart';
+
 class NavigationProvider extends ChangeNotifier {
   PageController scrollController = PageController();
 
@@ -9,6 +11,11 @@ class NavigationProvider extends ChangeNotifier {
   void createScrollController(String routeName) {
     scrollController = PageController(initialPage: getPageIndex(routeName));
     html.document.title = _pages[getPageIndex(routeName)];
+  }
+
+  void tokenDead() {
+    html.window.history.pushState(null, 'none', '#${Routes.login}');
+    html.document.title = 'Login';
   }
 
   int getPageIndex(String routeName) {

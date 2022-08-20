@@ -2,12 +2,19 @@
 import 'dart:developer';
 
 import 'package:fluro/fluro.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
+import 'package:victor_tauro/core/routes/routes.dart';
+import 'package:victor_tauro/features/auth/presentation/cubit/auth_cubit.dart';
 import 'package:victor_tauro/features/home/presentation/provider/navigation_provider.dart';
 
 import '../../features/error/presentation/pages/page_404.dart';
 import '../../features/home/presentation/pages/home_main_page.dart';
+import 'package:universal_html/html.dart' as html;
 import '../../features/login/presentation/pages/login_main_page.dart';
+
+import '../../locator.dart';
+import '../service/navigation_service.dart';
 
 final Handler loginHandler =
     Handler(handlerFunc: (context, params) => const LoginLayout());
@@ -33,9 +40,19 @@ final Handler initHandler = Handler(
           params['page']?.first == 'products' ||
           params['page']?.first == 'stock' ||
           params['page']?.first == 'sales') {
-        navigationProvider.createScrollController(page);
-
-        return const HomeLayout();
+        return BlocBuilder<AuthCubit, AuthState>(
+          builder: (context, state) {
+            if (state is AuthLogued) {
+              navigationProvider.createScrollController(page);
+              return const HomeLayout();
+            } else {
+              navigationProvider.tokenDead();
+              // html.window.history.pushState(null, 'none', '#${Routes.login}');
+              // html.document.title = 'Login';
+              return const LoginLayout();
+            }
+          },
+        );
       } else {
         return const Page404();
       }

@@ -1,6 +1,5 @@
-part of 'auth_bloc.dart';
+part of 'auth_cubit.dart';
 
-@immutable
 abstract class AuthState extends Equatable {
   const AuthState();
 
@@ -10,8 +9,6 @@ abstract class AuthState extends Equatable {
 
 class AuthInitial extends AuthState {}
 
-class AuthLoading extends AuthState {}
-
 class AuthLogued extends AuthState {}
 
-class AuthError extends AuthState {}
+class AuthNologued extends AuthState {}

@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../core/widgets/button_widget.dart';
 import '../../../../core/widgets/input_widget.dart';
 import '../../../../data/models/user/user.dart';
-import '../bloc/auth_bloc.dart';
+import '../bloc/login_bloc.dart';
 
 class LoginColumn extends StatefulWidget {
   const LoginColumn({Key? key}) : super(key: key);
@@ -37,11 +37,9 @@ class _LoginColumnState extends State<LoginColumn> {
         ButtonWidget.principal(
           textButton: 'Continuar',
           onPress: () {
-            context.read<AuthBloc>().add(
-                  AuthLogin(
-                    User(user: user.text, password: pass.text),
-                  ),
-                );
+            context
+                .read<LoginBloc>()
+                .add(Login(User(user: user.text, password: pass.text)));
           },
         ),
       ],
