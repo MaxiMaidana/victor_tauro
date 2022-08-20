@@ -1,5 +1,7 @@
 // Handlers
 import 'package:fluro/fluro.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:victor_tauro/features/auth/presentation/cubit/auth_cubit.dart';
 
 import '../../features/error/presentation/pages/page_404.dart';
 import '../../features/home/presentation/pages/home_main_page.dart';
@@ -14,8 +16,15 @@ final Handler loginHandler =
     Handler(handlerFunc: (context, params) => const LoginLayout());
 
 final Handler homeHandler = Handler(handlerFunc: (context, params) {
-  return const HomeLayout(
-    child: HomeView(),
+  return BlocBuilder<AuthCubit, AuthState>(
+    builder: (context, state) {
+      if (state is WithSession) {
+        return const HomeLayout(
+          child: HomeView(),
+        );
+      }
+      return const Page404();
+    },
   );
 });
 

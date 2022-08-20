@@ -1,6 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:victor_tauro/core/service/local_storage.dart';
 import 'package:victor_tauro/features/login/domain/usecases/sign_in.dart';
 
 import '../../../../data/models/user/user.dart';
@@ -17,8 +18,10 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
           await signIn(user: event.user.user, password: event.user.password);
       await Future.delayed(const Duration(seconds: 1));
       if (isLogued) {
+        LocalStorage.setPref('auth', true);
         emit(AuthLogued());
       } else {
+        LocalStorage.setPref('auth', false);
         emit(AuthError());
       }
     });
