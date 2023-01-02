@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../core/routes/routes.dart';
 import '../../../../core/widgets/button_widget.dart';
 import '../../../../core/widgets/input_widget.dart';
 import '../../../../data/models/user/user.dart';
 import '../bloc/auth_bloc.dart';
+import 'package:universal_html/html.dart' as html;
 
 class LoginColumn extends StatefulWidget {
   const LoginColumn({Key? key}) : super(key: key);
@@ -18,6 +20,8 @@ class _LoginColumnState extends State<LoginColumn> {
   TextEditingController pass = TextEditingController();
   @override
   Widget build(BuildContext context) {
+    // html.window.history.pushState(null, 'none', '#${Routes.login}');
+    // html.document.title = 'Login';
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
