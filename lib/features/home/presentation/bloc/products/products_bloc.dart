@@ -8,13 +8,16 @@ part 'products_event.dart';
 part 'products_state.dart';
 
 class ProductsBloc extends Bloc<ProductsEvent, ProductsState> {
+  List<NailPolish> nailPolishList = [];
   ProductsBloc() : super(ProductsInitial()) {
     on<ProductsGet>((event, emit) async {
-      emit(ProductsLoading());
-      GetProducts getProducts = GetProducts();
-      List<NailPolish> res = await getProducts();
-      await Future.delayed(const Duration(seconds: 1));
-      emit(ProductsCharged(products: res));
+      if (nailPolishList.isEmpty) {
+        emit(ProductsLoading());
+        GetProducts getProducts = GetProducts();
+        List<NailPolish> res = await getProducts();
+        await Future.delayed(const Duration(seconds: 1));
+        emit(ProductsCharged(products: res));
+      }
     });
   }
 }

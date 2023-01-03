@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../../core/constants.dart';
 import '../../../../core/routes/routes.dart';
-import '../../../../core/service/navigation_service.dart';
-import '../../../../locator.dart';
 import '../bloc/products/products_bloc.dart';
 
 class ItemsButtons extends StatefulWidget {
@@ -17,7 +16,6 @@ class ItemsButtons extends StatefulWidget {
 class _ItemsButtonsState extends State<ItemsButtons> {
   @override
   Widget build(BuildContext context) {
-    print('esto anda bien???');
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
@@ -25,11 +23,9 @@ class _ItemsButtonsState extends State<ItemsButtons> {
           child: SizedBox(
             height: 70,
             child: InkWell(
-              onTap: () => locator<NavigationService>().navigateTo(Routes.home),
+              onTap: () => context.push(Routes.home),
               hoverColor: kPrincipalColor,
-              child: const Center(
-                child: Text('Inicio'),
-              ),
+              child: const Center(child: Text('Inicio')),
             ),
           ),
         ),
@@ -39,26 +35,10 @@ class _ItemsButtonsState extends State<ItemsButtons> {
             child: InkWell(
               onTap: () {
                 context.read<ProductsBloc>().add(ProductsGet());
-                locator<NavigationService>().navigateTo(Routes.products);
+                context.push(Routes.products);
               },
               hoverColor: kPrincipalColor,
-              child: Center(
-                child: Column(
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
-                    Expanded(
-                      child: SizedBox(
-                        width: double.infinity,
-                        child: Center(child: Text('Productos')),
-                      ),
-                    ),
-                    Visibility(
-                      child: Divider(),
-                    ),
-                  ],
-                ),
-              ),
+              child: const Center(child: Text('Productos')),
             ),
           ),
         ),
@@ -66,12 +46,9 @@ class _ItemsButtonsState extends State<ItemsButtons> {
           child: SizedBox(
             height: 70,
             child: InkWell(
-              onTap: () =>
-                  locator<NavigationService>().navigateTo(Routes.stock),
+              onTap: () => context.push(Routes.stock),
               hoverColor: kPrincipalColor,
-              child: const Center(
-                child: Text('Stock'),
-              ),
+              child: const Center(child: Text('Stock')),
             ),
           ),
         ),
@@ -79,12 +56,9 @@ class _ItemsButtonsState extends State<ItemsButtons> {
           child: SizedBox(
             height: 70,
             child: InkWell(
-              onTap: () =>
-                  locator<NavigationService>().navigateTo(Routes.sales),
+              onTap: () => context.push(Routes.sales),
               hoverColor: kPrincipalColor,
-              child: const Center(
-                child: Text('Ventas'),
-              ),
+              child: const Center(child: Text('Ventas')),
             ),
           ),
         ),

@@ -37,6 +37,7 @@ dependencies:
   go_router: ^6.0.0
   universal_html: ^2.0.8
   shared_preferences: ^2.0.15
+  sizer: ^2.0.15
 
 
   # The following adds the Cupertino Icons font to your application.

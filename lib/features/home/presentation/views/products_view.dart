@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../../core/routes/routes.dart';
 import '../../../../core/service/navigation_service.dart';
@@ -26,7 +27,7 @@ class _ProductsViewState extends State<ProductsView> {
           return Column(
             children: [
               const SizedBox(height: 20),
-              const Text('Products', style: TextStyle(fontSize: 30)),
+              const Text('Productos', style: TextStyle(fontSize: 30)),
               const SizedBox(height: 20),
               SizedBox(
                 height: size.height - 145,
@@ -42,10 +43,12 @@ class _ProductsViewState extends State<ProductsView> {
                   ),
                   itemBuilder: (context, i) {
                     return InkWell(
-                      onTap: () {
-                        locator<NavigationService>()
-                            .navigateTo('${Routes.products}/$i');
-                      },
+                      onTap: () => context.push(
+                        Uri(
+                          path: '${Routes.products}/$i',
+                          queryParameters: {'id': state.products[i].id},
+                        ).toString(),
+                      ),
                       child: Container(
                         height: 100,
                         width: 100,

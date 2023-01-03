@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../../../../core/widget_tree.dart';
-import '../view/login_view.dart';
+import '../view/computer_view.dart';
+import '../view/tablet_view.dart';
 
 class LoginLayout extends StatefulWidget {
   const LoginLayout({Key? key}) : super(key: key);
@@ -25,8 +26,8 @@ class _LoginLayoutState extends State<LoginLayout> {
         tiny: Container(),
         phone: Container(),
         tablet: Container(),
-        largeTablet: Container(),
-        computer: const LoginView(),
+        largeTablet: const TabletView(),
+        computer: const ComputeView(),
       ),
 
       // drawer: DrawerPage(),

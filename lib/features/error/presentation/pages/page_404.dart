@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../../core/routes/routes.dart';
-import '../../../../core/service/navigation_service.dart';
 import '../../../../core/widgets/button_widget.dart';
-import '../../../../locator.dart';
 
 class Page404 extends StatelessWidget {
   const Page404({Key? key}) : super(key: key);
@@ -26,9 +25,7 @@ class Page404 extends StatelessWidget {
               const SizedBox(height: 50),
               ButtonWidget.principal(
                 textButton: 'Volver al login',
-                onPress: () =>
-                    // Navigator.pushReplacementNamed(context, Routes.login),
-                    locator<NavigationService>().navigateTo(Routes.login),
+                onPress: () => context.go(Routes.login),
               ),
             ],
           ),

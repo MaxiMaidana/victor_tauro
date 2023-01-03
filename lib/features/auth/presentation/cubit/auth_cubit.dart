@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:victor_tauro/core/service/local_storage.dart';
@@ -9,6 +11,7 @@ class AuthCubit extends Cubit<AuthState> {
 
   void checkSession() {
     bool res = LocalStorage.getPref('auth');
+    log('se ejecuto el cubit');
     if (res) {
       emit(WithSession());
     } else {

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:sizer/sizer.dart';
 
 import '../../../../core/routes/routes.dart';
 import '../../../../core/widgets/button_widget.dart';
@@ -26,18 +27,18 @@ class _LoginColumnState extends State<LoginColumn> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         const Text('Victor Tauro', style: TextStyle(fontSize: 40)),
-        const SizedBox(height: 50),
+        SizedBox(height: 10.h),
         InputWidget(
           hint: 'usuario',
           controller: user,
         ),
-        const SizedBox(height: 50),
+        SizedBox(height: 5.h),
         InputWidget(
           hint: 'contraseña',
           isPassword: true,
           controller: pass,
         ),
-        const SizedBox(height: 50),
+        SizedBox(height: 10.h),
         ButtonWidget.principal(
           textButton: 'Continuar',
           onPress: () {
